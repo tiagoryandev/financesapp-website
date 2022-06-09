@@ -1,0 +1,30 @@
+export default {
+	INVALID_PARAMS: "Você enviou dados errado na autenticação, verifique se os dados estão sendo enviados de forma correta.",
+	INVALID_TYPES: "O tipo dos dados enviados estão inválidos, verifique se os dados estão sendo enviados de forma correta.",
+	INVALID_CATEGORY_TYPE: "O tipo da categoria está inválida, está disponível apenas Receitas e Despesas.",
+	INVALID_EMAIL: "Infelizmente o formato do endereço de e-mail está inválido, verifique se o e-mail está a formatação correta.",
+	INVALID_TOKEN: "Sessão atual está invalida, será necessário refazer a autenticação para renovar os seus dados.",
+	INVALID_DATE: "Tipo de data está inválida, verifique se você está enviando o valor de forma correta.",
+	MAX_OR_MIN_NAME_LENGTH: "Você passou do limite de caracteres definidos, o nome deverá ter no mínimo 2 caracteres e no máximo 32.",
+	MAX_OR_MIN_TITLE_LENGTH: "Você passou do limite de caracteres definidos, o título deverá ter no mínimo 2 caracteres e no máximo 32.",
+	MAX_OR_MIN_NOTE_LENGTH: "Você passou do limite de caracteres definidos, a nota deverá ter no mínimo 2 caracteres e no máximo 2048.",
+	USER_ALREADY_EXISTS: "Usuário já existente.",
+	CATEGORY_ALREADY_EXISTS: "Categoria já existente.",
+	NOT_FOUND_USER: "Não foi possível encontrar o usuário.",
+	NOT_FOUND_CATEGORY: "Não foi possível encontrar a categoria.",
+	NOT_FOUND_ITEM: "Não foi possível encontrar o item.",
+	NOT_AUTHENTICATED: "Para acessar essa funcionalidade, será necessário se autenticar com a nossa plataforma.",
+	EMAIL_OR_PASSWORD_INCORRECT: "Email ou Senha estão incorretos, verifique se os dados estão incorretos.",
+	TOKEN_EXPIRED: "Sessão atual está inválida, será necessário refazer a autenticação para renovar os seus dados.",
+	TOKEN_GENERATED: "Sessão foi atualizada com sucesso.",
+	USER_CREATED: "Usuário criado com sucesso, você será redirecionado para o seu painel.",
+	CATEGORY_CREATED: "Categoria criada com sucesso.",
+	ITEM_CREATED: "Item criado com sucesso.",
+	USER_SEARCHED: "Usuário selecionado com sucesso.",
+	CATEGORY_SEARCHED: "Categoria selecionada com sucesso.",
+	ITEM_SEARCHED: "Item selecionado com sucesso.",
+	CATEGORY_LIST_SELECTED: "Lista de categories foi selecionada com sucesso.",
+	ITEM_LIST_SELECT: "Lista de items selecionada com sucesso."
+} as {
+    [code: string]: string
+};
