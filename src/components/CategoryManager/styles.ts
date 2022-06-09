@@ -102,6 +102,21 @@ export const CategoryList = styled.div`
     overflow: hidden auto;
     scroll-behavior: smooth;
 
+    .not-category {
+        svg {
+            display: block;
+            margin: 40px auto 10px;
+        }
+
+        span {
+            max-width: 200px;
+            display: block;
+            user-select: none;
+            margin: 10px auto;
+            text-align: center;
+        }
+    }
+
     &::-webkit-scrollbar {
         width: 10px;
     }

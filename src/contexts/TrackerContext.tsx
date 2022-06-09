@@ -41,7 +41,9 @@ export const TrackerProvider = ({ children }: ProviderProps) => {
 			itemsFiltered,
 			categories,
 			currentMonth,
-			setCurrentMonth
+			setCurrentMonth,
+			setItems,
+			setCategories
 		}}>
 			{children}
 		</TrackerContext.Provider>

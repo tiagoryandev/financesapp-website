@@ -10,6 +10,8 @@ export type TrackerContextType = {
     categories: Category[];
     currentMonth: string;
     setCurrentMonth: React.Dispatch<React.SetStateAction<string>>;
+    setItems: React.Dispatch<React.SetStateAction<Item[]>>;
+    setCategories: React.Dispatch<React.SetStateAction<Category[]>>;
 };
 
 export type Item = {

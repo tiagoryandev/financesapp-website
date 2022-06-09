@@ -15,6 +15,7 @@ export const Container = styled(motion.div)<{ type?: "accept" | "error", timer?:
 	top: 0;
 	left: 0;
 	right: 0;
+	z-index: 2000;
 
 	display: flex;
 
