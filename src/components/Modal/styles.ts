@@ -16,6 +16,12 @@ export const Container = styled(motion.div)`
     height: 100vh;
 
     background-color: rgba(0, 0, 0, 0.7);
+
+    @media (max-width: 400px) and (max-height: 900px) {
+        display: block;
+        align-items: initial;
+        justify-content: initial;
+    }
 `;
 
 export const Modal = styled(motion.div)`

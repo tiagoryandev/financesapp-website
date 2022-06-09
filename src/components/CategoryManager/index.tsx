@@ -22,7 +22,7 @@ const CategoryManager: React.FC<Props> = ({ isOpen, setOpen }) => {
 
 		menu?.classList.toggle("open");
 	};
-
+	
 	return (
 		<AnimatePresence>
 			{isOpen && <Modal
