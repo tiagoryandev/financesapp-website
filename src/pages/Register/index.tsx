@@ -7,6 +7,7 @@ import * as C from "./styles";
 import LogoMark from "../../components/LogoMark";
 import ButtonAuth from "../../components/ButtonAuth";
 import CheckBoxTerms from "../../components/CheckBoxTerms";
+import Footer from "../../components/Footer";
 import { NotifyContext } from "../../contexts/NotifyContext";
 import { AuthContext } from "../../contexts/AuthContext";
 import { getRegisterProps, getValidation, getRegister } from "../../services/AuthUserService";
@@ -146,6 +147,7 @@ const Register: React.FC = () => {
 				<div className="separator"></div>
 				<div className="redirect-link" onClick={() => navigate("/login")}>Já possui uma conta?</div>
 			</C.Modal>
+			<Footer />
 		</C.Container>
 	);
 };

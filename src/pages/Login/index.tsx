@@ -6,6 +6,7 @@ import { MdEmail, MdVpnKey, MdRemoveRedEye } from "react-icons/md";
 import * as C from "./styles";
 import LogoMark from "../../components/LogoMark";
 import ButtonAuth from "../../components/ButtonAuth";
+import Footer from "../../components/Footer";
 import { NotifyContext } from "../../contexts/NotifyContext";
 import { AuthContext } from "../../contexts/AuthContext";
 import { getLogin, getLoginProps } from "../../services/AuthUserService";
@@ -100,6 +101,7 @@ const Login: React.FC = () => {
 				<div className="separator"></div>
 				<div className="redirect-link" onClick={() => navigate("/register")}>Ainda não possui uma conta?</div>
 			</C.Modal>
+			<Footer />
 		</C.Container>
 	);
 };
