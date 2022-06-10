@@ -13,7 +13,6 @@ export const DarkMode = {
 			}
 		},
 		text: {
-
 			default: "#e1e1e6",
 			strong: "#FFFFFF",
 			description: "#808080"
