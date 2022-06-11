@@ -7,9 +7,10 @@ import { Item } from "../../types/TrackerContextTypes";
 
 type Props = {
     item: Item;
+	openInfo: (item: Item) => void;
 };
 
-const ItemRow: React.FC<Props> = ({ item }) => {
+const ItemRow: React.FC<Props> = ({ item, openInfo }) => {
 	const { categories } = useContext(TrackerContext);
 
 	const category = categories.find(category => category.id == item.category_id);
@@ -19,7 +20,7 @@ const ItemRow: React.FC<Props> = ({ item }) => {
 	}).format(item.value);
 
 	return (
-		<C.Container className={category?.type}>
+		<C.Container className={category?.type} onClick={() => openInfo(item)}>
 			<div className="content">
 				<h1>{item.title}</h1>
 				<p>{category?.name || "Desconhecida"}</p>

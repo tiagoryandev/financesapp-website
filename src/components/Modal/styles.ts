@@ -29,7 +29,6 @@ export const Modal = styled(motion.div)`
 
     width: 100%;
     max-width: 400px;
-    min-height: 500px;
     padding: 20px;
 
     background-color: ${props => props.theme.colors.background.modal};

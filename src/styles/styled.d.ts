@@ -26,6 +26,10 @@ declare module "styled-components" {
                 green: {
                     default: string,
                     black: string
+                },
+                red: {
+                    default: string,
+                    black: string
                 }
             },
             icon: {
