@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import numberFormat from "number-format.js";
 
 import * as C from "./styles";
 import { TrackerContext } from "../../contexts/TrackerContext";
@@ -14,6 +13,10 @@ const ItemRow: React.FC<Props> = ({ item }) => {
 	const { categories } = useContext(TrackerContext);
 
 	const category = categories.find(category => category.id == item.category_id);
+	const itemCurrency = Intl.NumberFormat("pt-BR", {
+		style: "currency",
+		currency: "BRL"
+	}).format(item.value);
 
 	return (
 		<C.Container className={category?.type}>
@@ -22,7 +25,7 @@ const ItemRow: React.FC<Props> = ({ item }) => {
 				<p>{category?.name || "Desconhecida"}</p>
 			</div>
 			<div className="data-item">
-				<p className={category?.type}>R$ {category?.type == "expense" && "-"}{numberFormat("#.##0,00", item.value)}</p>
+				<p className={category?.type}>{itemCurrency}</p>
 				<span>{formatDate(item.created_at)}</span>
 			</div>
 		</C.Container>

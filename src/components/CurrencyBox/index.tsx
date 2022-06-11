@@ -1,5 +1,4 @@
 import React from "react";
-import numberFormat from "number-format.js";
 
 import * as C from "./styles";
 
@@ -12,7 +11,10 @@ type Props = {
 };
 
 const CurrencyBox: React.FC<Props> = ({ gridArea, bgColor, title, value, icon }) => {
-	const currencyFormat = numberFormat("R$ #.##0,00", value);
+	const currencyFormat = Intl.NumberFormat("pt-BR", {
+		style: "currency",
+		currency: "BRL"
+	}).format(value);
 	
 	return (
 		<C.Container gridArea={gridArea} bgColor={bgColor}>
