@@ -27,7 +27,7 @@ export const DarkMode = {
 			},
 			red: {
 				default: "crimson",
-				black: "#70262a"
+				black: "#622427"
 			}
 		},
 		icon: {
