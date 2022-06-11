@@ -2,20 +2,53 @@ import React, { useState, useContext } from "react";
 import { AnimatePresence } from "framer-motion";
 
 import * as C from "./styles";
+import api from "../../api";
 import ItemRow from "../ItemRow";
 import Modal from "../Modal";
+import { NotifyContext } from "../../contexts/NotifyContext";
+import { AuthContext } from "../../contexts/AuthContext";
 import { TrackerContext } from "../../contexts/TrackerContext";
 import { Item } from "../../types/TrackerContextTypes";
 import { formatDate } from "../../helpers/dataFilter";
 
 const TableItems: React.FC = () => {
-	const { itemsFiltered, categories } = useContext(TrackerContext);
+	const { setNotify } = useContext(NotifyContext);
+	const { setUpdating } = useContext(AuthContext);
+	const { items, setItems, itemsFiltered, categories } = useContext(TrackerContext);
 	const [itemInfo, setItemInfo] = useState<Item | null>(null);
 	const [openItem, setOpenItem] = useState(false);
 
 	const handleOpenItemInfo = (item: Item) => {
 		setItemInfo(item);
 		setOpenItem(!openItem);
+	};
+
+	const handleRemoveItem = async () => {
+		setUpdating(true);
+
+		if (itemInfo) {
+			try {
+				await api.delete("/items/" + itemInfo.id);
+
+				setItems(items.filter(item => item.id !== itemInfo.id));
+
+				setNotify({
+					content: "Item removido com Sucesso!",
+					timer: 3,
+					type: "accept"
+				});
+			} catch (error) {
+				setNotify({
+					content: "Ocorreu um problema ao remover o Item. Tente novamente mais tarde!",
+					timer: 3,
+					type: "error"
+				});
+			} finally {
+				setItemInfo(null);
+				setOpenItem(false);
+				setUpdating(false);
+			}
+		}
 	};
 
 	return (
@@ -33,7 +66,7 @@ const TableItems: React.FC = () => {
 					<C.InputValue>{formatDate(itemInfo.created_at)}</C.InputValue>
 					<C.Label>Nota do Item</C.Label>
 					<C.InputValue>{itemInfo.note}</C.InputValue>
-					<C.ButtonRemove>Remover Item</C.ButtonRemove>
+					<C.ButtonRemove onClick={handleRemoveItem}>Remover Item</C.ButtonRemove>
 				</Modal>}
 			</AnimatePresence>
 			<C.Container>
