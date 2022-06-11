@@ -5,6 +5,7 @@ import * as C from "./styles";
 type Props = {
     isOpen: boolean;
     setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+	children: React.ReactNode;
 };
 
 const Modal: React.FC<Props> = ({ isOpen, setOpen, children }) => {
