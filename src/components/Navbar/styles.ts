@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
 import { MdCalculate } from "react-icons/md";
 
 export const Container = styled.div`
@@ -57,52 +56,82 @@ export const Options = styled.div`
     }
 `;
 
-export const UserInfo = styled(motion.div)`
-    position: absolute;
-    top: 50px;
-    right: 0;
+export const Title = styled.h1`
+    user-select: none;
+    font-size: 20px;
+`;
 
-    padding: 10px;
-    width: 250px;
-    height: 60px;
-    background-color: ${props => props.theme.colors.background.modal};
-    border-radius: 3px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+export const UserInfo = styled.div`
+    user-select: none;
 
-    display: flex;
-    align-items: center;
+    h1 {
+        display: flex;
+        align-items: center;
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: -10px;
-        right: 6px;
+        margin-top: 15px;
+        font-size: 25px;
 
-        width: 20px;
-        height: 20px;
-        background-color: ${props => props.theme.colors.background.modal};
-        transform: rotate(45deg);
-    }
-
-    .avatar {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: ${props => props.theme.colors.background.default};
-    }
-
-    .infos {
-        margin-left: 10px;
-
-        .name {
-            user-select: none;
-            color: ${props => props.theme.colors.text.default};
-        }
-
-        .email {
-            user-select: none;
+        span {
+            cursor: pointer;
+            padding: 3px 5px;
+            margin-left: 10px;
             font-size: 14px;
-            color: ${props => props.theme.colors.text.description};
+            border-radius: 3px;
+
+            &.user {
+                background-color: ${props => props.theme.colors.buttons.green.default};
+            }
+
+            &.admin {
+                background-color: ${props => props.theme.colors.buttons.red.default};
+            }
         }
     }
+
+    .email {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-top: 5px;
+        color: ${props => props.theme.colors.text.description};
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        svg {
+            fill: ${props => props.theme.colors.buttons.green.default};
+            margin-right: 5px;
+        }
+    }
+`;
+
+export const ButtonLogout = styled.button`
+	width: 100%;
+	max-width: 200px;
+	min-height: 40px;
+	display: block;
+	margin: 20px auto 10px;
+
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background-color: ${props => props.theme.colors.buttons.red.default};
+	border-radius: 3px;
+	transition: background-color 0.3s;
+	box-shadow: 0px 5px 0px ${props => props.theme.colors.buttons.red.black};
+
+	font-weight: bold;
+	font-size: 16px;
+	user-select: none;
+
+	&:active {
+		transform: translateY(5px);
+		box-shadow: none;
+	}
+
+	&.disabled {
+		transform: translateY(5px);
+		box-shadow: none;
+	}
 `;
