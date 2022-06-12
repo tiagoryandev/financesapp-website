@@ -92,7 +92,13 @@ const Login: React.FC = () => {
 						onClick={() => setViewPass(!viewPass)} 
 					/>
 				</C.Input>
-				<div className="redirect-link">Esqueceu sua Senha?</div>
+				<div className="redirect-link" onClick={() => setNotify({
+					content: "Infelizmente essa funcionalidade não está disponível no momento.",
+					type: "error",
+					timer: 3
+				})}>
+						Esqueceu sua Senha?
+				</div>
 				<ButtonAuth 
 					disabled={disable}
 					title="Entrar"
@@ -102,7 +108,7 @@ const Login: React.FC = () => {
 				<div className="redirect-link" onClick={() => navigate("/register")}>Ainda não possui uma conta?</div>
 			</C.Modal>
 			<Footer />
-		</C.Container>
+		</C.Container >
 	);
 };
 
