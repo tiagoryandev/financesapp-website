@@ -4,12 +4,14 @@ import { MdArrowLeft, MdArrowRight, MdCategory, MdAddCircleOutline, MdOutlineMor
 
 import * as C from "./styles";
 import CategoryManager from "../CategoryManager";
+import ItemManager from "../ItemManager";
 import { TrackerContext } from "../../contexts/TrackerContext";
 import { formatCurrentMonth } from "../../helpers/dataFilter";
 
 const HandleItems: React.FC = () => {
 	const { currentMonth, setCurrentMonth } = useContext(TrackerContext);
 	const [openCreateCategory, setOpenCreateCategory] = useState(false);
+	const [openCreateItem, setOpenCreateItem] = useState(false);
 	const [openMenu, setOpenMenu] = useState(false);
 
 	const handleMonth = (to: "prev" | "next") => {
@@ -22,14 +24,16 @@ const HandleItems: React.FC = () => {
 
 	return (
 		<>
+
 			<CategoryManager isOpen={openCreateCategory} setOpen={setOpenCreateCategory} />
+			<ItemManager isOpen={openCreateItem} setOpen={setOpenCreateItem} />
 			<C.Container>
 				<C.HandleMonth>
 					<MdArrowLeft size={32} onClick={() => handleMonth("prev")} />
 					<span>{formatCurrentMonth(currentMonth)}</span>
 					<MdArrowRight size={32} onClick={() => handleMonth("next")} />
 				</C.HandleMonth>
-				<C.ButtonOption>
+				<C.ButtonOption onClick={() => setOpenCreateItem(true)}>
 					<MdAddCircleOutline size={32} />
 				</C.ButtonOption>
 				<C.ButtonOption onClick={() => setOpenCreateCategory(true)}>
