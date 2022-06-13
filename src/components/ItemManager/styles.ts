@@ -71,6 +71,8 @@ export const InputName = styled.div`
         width: 100%;
         background-color: ${props => props.theme.colors.background.default};
         border: 1px solid ${props => props.theme.colors.input.border};
+        overflow: hidden auto;
+        max-height: 200px;
 
         .option {
             width: 100%;
@@ -98,6 +100,16 @@ export const InputName = styled.div`
 
         &.open {
             display: block;
+        }
+
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: ${props => props.theme.colors.background.modal};
         }
     }
 
