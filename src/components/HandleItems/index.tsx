@@ -56,7 +56,10 @@ const HandleItems: React.FC = () => {
 								duration: 0.5
 							}}
 						>
-							<C.ButtonFixedOption onClick={() => setOpenMenu(false)}>
+							<C.ButtonFixedOption onClick={() => {
+								setOpenCreateItem(true);
+								setOpenMenu(false);
+							}}>
 								<MdAddCircleOutline size={32} />
 							</C.ButtonFixedOption>
 							<C.ButtonFixedOption onClick={() => {
