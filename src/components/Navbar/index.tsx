@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
 					<C.Title>Sua Conta</C.Title>
 					<C.UserInfo>
 						<h1>{user?.first_name} {user?.last_name}<span className={user?.role === "ADMIN" ? "admin" : "user"}>{user?.role === "ADMIN" ? "Administrador" : "Usuário"}</span></h1>
-						<div className="email">{!user?.is_checked && <MdCheck size={20} />} {user?.email}</div>
+						<div className="email">{user?.is_checked && <MdCheck size={20} />} {user?.email}</div>
 						<C.ButtonLogout onClick={HandleLogout}>Sair da Conta</C.ButtonLogout>
 					</C.UserInfo>
 				</Modal>}
