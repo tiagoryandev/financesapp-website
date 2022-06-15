@@ -17,7 +17,7 @@ export const Container = styled.div<{ gridArea: string, bgColor?: "green" | "red
 
     @media (max-width: 800px) {
         padding: 15px;
-        max-width: 100%;
+        min-width: 250px;
     }
 
     &:hover {
