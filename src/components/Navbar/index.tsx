@@ -6,7 +6,7 @@ import { MdCheck } from "react-icons/md";
 import * as C from "./styles";
 import Modal from "../Modal";
 import { AuthContext } from "../../contexts/AuthContext";
-import { TrackerContext  } from "../../contexts/TrackerContext";
+import { TrackerContext } from "../../contexts/TrackerContext";
 
 const Navbar: React.FC = () => {
 	const navigate = useNavigate();
@@ -42,9 +42,18 @@ const Navbar: React.FC = () => {
 					<h1>Finances</h1>
 				</C.LogoMark>
 				<C.Options>
-					<span onClick={() => setOpenProfile(!openProfile)}>
+					{user && <span onClick={() => setOpenProfile(!openProfile)}>
 						{user?.first_name} {user?.last_name}
-					</span>
+					</span>}
+
+					{!user && <>
+						<span onClick={() => navigate("/login")}>
+							Entrar
+						</span>
+						<span onClick={() => navigate("/register")}>
+							Registrar
+						</span>
+					</>}
 				</C.Options>
 			</C.Container>
 		</>
