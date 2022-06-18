@@ -13,8 +13,8 @@ export const Container = styled.div`
     
     @media (max-width: 800px) {
         overflow: auto hidden;
-        padding-bottom: 10px;
-        margin: 0px 0px;
+        padding: 0 10px 10px;
+        margin: 0px -10px;
         scroll-behavior: smooth;
     }
 
