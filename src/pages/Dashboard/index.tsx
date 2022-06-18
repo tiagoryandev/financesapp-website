@@ -9,7 +9,7 @@ import TableItems from "../../components/TableItems";
 import { AuthContext } from "../../contexts/AuthContext";
 import { TrackerContext } from "../../contexts/TrackerContext";
 
-const Home: React.FC = () => {
+const Dashboard: React.FC = () => {
 	const { isAuthenticated } = useContext(AuthContext);
 	const { itemsFiltered, categories } = useContext(TrackerContext);
 
@@ -55,4 +55,4 @@ const Home: React.FC = () => {
 	);
 };
 
-export default Home;
+export default Dashboard;

@@ -42,7 +42,7 @@ const Login: React.FC = () => {
 			setUpdating(false);
 			setUser(user);
 
-			return navigate("/");
+			return navigate("/dashboard");
 		} else {
 			setUpdating(false);
 			setDisable(false);
