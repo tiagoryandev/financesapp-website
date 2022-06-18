@@ -11,27 +11,32 @@ type Props = {
 
 const GroupBox: React.FC<Props> = ({ income, expense }) => {
 	return (
-		<C.Container>
-			<CurrencyBox 
-				gridArea="income" 
-				title="Receita"
-				value={income}
-				icon={<MdNorth />}
-			/>
-			<CurrencyBox 
-				gridArea="expense" 
-				title="Despesas"
-				value={expense}
-				icon={<MdSouth />}
-			/>
-			<CurrencyBox 
-				gridArea="balance" 
-				bgColor={(income - expense) < 0 ? "red" : "green"}
-				title="Balanço"
-				value={income - expense}
-				icon={<MdAccountBalance />}
-			/>
-		</C.Container>
+		<>
+			<C.WarningScroll>
+				Como a sua tela é muito pequena, você pode mover as caixas horizontalmente para ver o valor.
+			</C.WarningScroll>
+			<C.Container>
+				<CurrencyBox 
+					gridArea="income" 
+					title="Receita"
+					value={income}
+					icon={<MdNorth />}
+				/>
+				<CurrencyBox 
+					gridArea="expense" 
+					title="Despesas"
+					value={expense}
+					icon={<MdSouth />}
+				/>
+				<CurrencyBox 
+					gridArea="balance" 
+					bgColor={(income - expense) < 0 ? "red" : "green"}
+					title="Balanço"
+					value={income - expense}
+					icon={<MdAccountBalance />}
+				/>
+			</C.Container>
+		</>
 	);
 };
 

@@ -16,6 +16,7 @@
     "react-dom": "^18.1.0",
     "react-hook-form": "^7.32.0",
     "react-icons": "^4.4.0",
+    "react-indiana-drag-scroll": "^2.2.0",
     "react-number-format": "^4.9.3",
     "react-router-dom": "^6.3.0",
     "styled-components": "^5.3.5"
