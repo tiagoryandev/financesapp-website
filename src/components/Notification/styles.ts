@@ -51,9 +51,9 @@ export const Container = styled(motion.div)<{ type?: "accept" | "error", timer?:
 		background-color: #ffffff;
 		border-bottom-left-radius: 3px;
 
-		animation: Nivel ${props => props.timer ? props.timer : 3}s forwards linear;
+		animation: Level ${props => props.timer ? props.timer : 3}s forwards linear;
 
-		@keyframes Nivel {
+		@keyframes Level {
 			from {
 				width: 100%;
 			}
@@ -61,6 +61,10 @@ export const Container = styled(motion.div)<{ type?: "accept" | "error", timer?:
 				width: 0%;
 			}
 		}
+	}
+
+	@media (max-width: 500px) {
+		max-width: calc(100vw - 20px);
 	}
 `;
 
