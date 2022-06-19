@@ -111,3 +111,62 @@ export const About = styled.div`
         }
     }
 `;
+
+export const Exemple = styled.div`
+    display: flex;
+    padding: 30px;
+    align-items: center;
+    justify-content: space-between; 
+
+    img {
+        user-select: none;
+        width: 100%;
+        max-width: 300px;
+
+        &.shadow {
+            filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+        }
+    }
+
+    .content {
+        user-select: none;
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            color: ${props => props.theme.colors.text.description};
+            width: 100%;
+            max-width: 400px;
+        }
+    }
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+
+        img {
+            display: block;
+            margin: 20px auto;
+
+            &.shadow {
+                filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+            }
+        }
+
+        .content {
+            margin: 30px auto 0px;
+            text-align: center;
+
+            p {
+                margin: 0 auto;
+            }
+        }
+
+        &.reverse {
+            flex-direction: column-reverse;
+        }
+    }
+`;

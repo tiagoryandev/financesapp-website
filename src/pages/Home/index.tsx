@@ -5,7 +5,9 @@ import { MdCalculate } from "react-icons/md";
 import * as C from "./styles";
 import Navbar from "../../components/Navbar";
 import ButtonAuth from "../../components/ButtonAuth";
-import Image from "../../assets/dashboard.png";
+import DashboardImage from "../../assets/dashboard.png";
+import GroupBoxImage from "../../assets/group-box.png";
+import TableItemsImage from "../../assets/table-items.png";
 import Footer from "../../components/Footer";
 
 const Home: React.FC = () => {
@@ -19,7 +21,7 @@ const Home: React.FC = () => {
 					<h1>O Serviço para Gerenciar suas Receitas e Despesas.</h1>
 					<ButtonAuth title="Começar Agora" disabled={false} onClick={() => navigate("/dashboard")} />
 				</div>
-				<img src={Image} alt="Imagem de exemplo do painel." />
+				<img src={DashboardImage} alt="Imagem de exemplo do painel." />
 			</C.Header>
 			<div className="separator"></div>
 			<C.About>
@@ -29,6 +31,21 @@ const Home: React.FC = () => {
 				</div>
 				<MdCalculate />
 			</C.About>
+			<div className="separator"></div>
+			<C.Exemple>
+				<img src={GroupBoxImage} alt="Imagem de exemplo da Caixas de Valores." />
+				<div className="content">
+					<h1>Informações Rápidas</h1>
+					<p>Tenha controle sobre o total de despesas e receitas do seu mês.</p>
+				</div>
+			</C.Exemple>
+			<C.Exemple className="reverse">
+				<div className="content">
+					<h1>Organização</h1>
+					<p>Veja detalhadamente cada item que é registrado de acordo com o valor, categoria, data e nota.</p>
+				</div>
+				<img className="shadow" src={TableItemsImage} alt="Imagem de exemplo da Caixas de Valores." />
+			</C.Exemple>
 			<div className="separator"></div>
 			<Footer />
 		</C.Container>
