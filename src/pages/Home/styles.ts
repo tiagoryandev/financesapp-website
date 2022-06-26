@@ -18,7 +18,7 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.div`
-    margin-top: 20px;
+    margin: 60px 0;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -51,6 +51,8 @@ export const Header = styled.div`
         display: block;
 
         .content {
+            margin-left: 0px;
+
             h1 {
                 max-width: 100%;
                 margin: 0 auto;
@@ -74,6 +76,7 @@ export const Header = styled.div`
 export const About = styled.div`
     display: flex;
     padding: 30px;
+    margin: 60px 0;
     align-items: center;
     justify-content: space-between;
     
@@ -114,6 +117,7 @@ export const About = styled.div`
 
 export const Exemple = styled.div`
     display: flex;
+    margin: 60px 0;
     padding: 30px;
     align-items: center;
     justify-content: space-between; 
