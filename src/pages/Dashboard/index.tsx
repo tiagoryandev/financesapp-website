@@ -11,7 +11,7 @@ import { TrackerContext } from "../../contexts/TrackerContext";
 
 const Dashboard: React.FC = () => {
 	const { isAuthenticated } = useContext(AuthContext);
-	const { itemsFiltered, categories } = useContext(TrackerContext);
+	const { items, itemsFiltered, categories } = useContext(TrackerContext);
 
 	const [income, setIncome] = useState(0);
 	const [expense, setExpense] = useState(0);
@@ -25,11 +25,12 @@ const Dashboard: React.FC = () => {
 	}, []);
 
 	useEffect(() => {
+		const storageItems = items;
 		let currentIncome = 0;
 		let currentExpense = 0;
 
-		for (const i in itemsFiltered) {
-			const item = itemsFiltered[i];
+		for (const i in storageItems) {
+			const item = storageItems[i];
 			const categoryItem = categories.find(c => c.id === item.category_id);
 
 			if (categoryItem?.type == "expense") {

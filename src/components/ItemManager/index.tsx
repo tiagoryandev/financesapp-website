@@ -110,7 +110,6 @@ const ItemManager: React.FC<Props> = ({ isOpen, setOpen }) => {
 						<input
 							type="date"
 							placeholder="Data de Criação"
-							value={date}
 							onChange={e => setDate(new Date(e.target.value).toJSON())}
 						/>
 					</C.InputName>
